@@ -15,7 +15,7 @@ const My = () => {
 
   const [visible, setVisible] = useState(true);
   const toggleVisible = () => {
-    setVisible(!true);
+    setVisible(!visible);
   };
 
   return (
