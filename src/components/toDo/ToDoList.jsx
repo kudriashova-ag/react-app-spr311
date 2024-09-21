@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./toDo.css";
 import ToDoAdd from "./ToDoAdd";
 import ToDoFilter from "./ToDoFilter";
@@ -9,6 +9,17 @@ const ToDoList = () => {
   const [tasks, setTasks] = useState(list);
   const [activeFilter, setActiveFilter] = useState("ALL"); // "all", "todo", "done"
 
+
+  useEffect(() => { 
+    const savedTasks = localStorage.getItem("tasks");
+    if (savedTasks) {
+      setTasks(JSON.parse(savedTasks));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+   }, [tasks]);
 
   const addTask = (title) => {
     setTasks([...tasks, { id: Date.now(), title: title, done: false }]);
@@ -50,6 +61,7 @@ const ToDoList = () => {
 
   return (
     <div className="container-toDo">
+      
       <h1>ToDo List</h1>
 
       <ToDoAdd addTask={addTask} />
