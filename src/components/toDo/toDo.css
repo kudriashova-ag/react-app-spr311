@@ -20,3 +20,7 @@
 .tasks button{
     margin-left: auto;
 }
+
+.container-toDo .active{
+    background-color: dodgerblue;
+}
