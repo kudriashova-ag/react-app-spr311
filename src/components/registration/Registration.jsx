@@ -21,7 +21,7 @@ const registrationSchema = Yup.object().shape({
     .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/, 'Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number and one special character'),
 });
 
-const Registration = () => {
+const Registration = ({toogleIsLogin}) => {
   return (
     <div style={{ padding: "20px" }}>
       <h1>Registration</h1>
@@ -78,6 +78,13 @@ const Registration = () => {
           </Button>
         </Form>
       </Formik>
+
+      <p>
+        Already have an account?{" "}
+        <a href="#" onClick={toogleIsLogin}>
+          Login
+        </a>
+      </p>
     </div>
   );
 };
