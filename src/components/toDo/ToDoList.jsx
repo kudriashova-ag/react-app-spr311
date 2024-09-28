@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./toDo.css";
 import ToDoAdd from "./ToDoAdd";
 import ToDoFilter from "./ToDoFilter";
 import ToDoItem from "./ToDoItem";
 import list from "./toDoData";
+import ThemeContext from "../../context/ThemeContext";
 
 const ToDoList = () => {
   const [tasks, setTasks] = useState(list);
   const [activeFilter, setActiveFilter] = useState("ALL"); // "all", "todo", "done"
-
+  const {theme} = useContext(ThemeContext);
 
   useEffect(() => { 
     const savedTasks = localStorage.getItem("tasks");
@@ -60,7 +61,7 @@ const ToDoList = () => {
   };
 
   return (
-    <div className="container-toDo">
+    <div className={`container-toDo container-toDo-${theme}`}>
       
       <h1>ToDo List</h1>
 
