@@ -14,7 +14,13 @@ const Header = () => {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/todos">Todo</NavLink>
         <NavLink to="/my">My</NavLink>
+        <NavLink to="/counters">Counters</NavLink>
       </nav>
+
+      <div style={{marginLeft: 'auto', marginRight: '20px'}}>
+        <NavLink to="/login">Login</NavLink>
+        <NavLink to="/registration">Registration</NavLink>
+      </div>
 
       <Button
         type="primary"
@@ -22,7 +28,6 @@ const Header = () => {
         onClick={toggleTheme}
         icon={theme === "light" ? <MoonOutlined /> : <SunOutlined />}
       ></Button>
-      
     </header>
   );
 };
