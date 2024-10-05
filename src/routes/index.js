@@ -6,6 +6,8 @@ import Counters from "../components/counters/Counters";
 import Registration from "../components/registration/Registration";
 import Login from "../components/login/Login";
 import Users from "../components/users/Users";
+import { getUser, getUsers } from "../loaders/Users";
+import User from "../components/users/User";
 
 const router = createBrowserRouter([
     {
@@ -38,7 +40,13 @@ const router = createBrowserRouter([
             },
             {
                 path: "/users",
+                loader: getUsers,
                 element: <Users />
+            },
+            {
+                path: "/users/:id",
+                loader: getUser,
+                element: <User />
             }
         ]
     },
