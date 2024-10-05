@@ -1,6 +1,6 @@
 // import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link, Outlet, useLoaderData } from 'react-router-dom';
 
 const Users = () => {
     /*const [users, setUsers] = useState([]);
@@ -24,6 +24,8 @@ const Users = () => {
                     <li key={user.id}> <Link to={`/users/${user.id}`}> {user.name} </Link></li>
                 ))}
             </ol>
+
+            <Outlet />
         </div>
     );
 }

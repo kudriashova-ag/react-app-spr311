@@ -41,13 +41,16 @@ const router = createBrowserRouter([
             {
                 path: "/users",
                 loader: getUsers,
-                element: <Users />
+                element: <Users />,
+                children: [
+                    {
+                        path: ":id",
+                        loader: getUser,
+                        element: <User />
+                    }
+                ]
             },
-            {
-                path: "/users/:id",
-                loader: getUser,
-                element: <User />
-            }
+
         ]
     },
 
