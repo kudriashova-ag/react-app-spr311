@@ -1,8 +1,11 @@
 // import axios from 'axios';
 import React, { useEffect, useState } from "react";
-import { Link, Outlet, useLoaderData, useSearchParams } from "react-router-dom";
-import "./Users.css";
+import { NavLink, Outlet, useLoaderData, useSearchParams } from "react-router-dom";
+import styles from "./Users.module.css";
 import { Col, Row } from "antd";
+
+console.log(styles);
+
 const Users = () => {
   /*const [users, setUsers] = useState([]);
 
@@ -37,11 +40,10 @@ const Users = () => {
             <input type="text" value={textSearch} onChange={searchHandler} />
           </div>
 
-          <ol>
+          <ol className={styles.users}>
             {users.filter(filterUsers).map((user) => (
               <li key={user.id}>
-                {" "}
-                <Link to={`/users/${user.id}`}> {user.name} </Link>
+                <NavLink to={`/users/${user.id}`}> {user.name} </NavLink>
               </li>
             ))}
           </ol>
