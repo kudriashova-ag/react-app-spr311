@@ -5,6 +5,7 @@ import App from "../App";
 import Counters from "../components/counters/Counters";
 import Registration from "../components/registration/Registration";
 import Login from "../components/login/Login";
+import Users from "../components/users/Users";
 
 const router = createBrowserRouter([
     {
@@ -35,7 +36,10 @@ const router = createBrowserRouter([
                 path: '/registration',
                 element: <Registration />
             },
-
+            {
+                path: "/users",
+                element: <Users />
+            }
         ]
     },
 

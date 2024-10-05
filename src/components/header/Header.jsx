@@ -16,6 +16,7 @@ const Header = () => {
         <NavLink to="/todos">Todo</NavLink>
         <NavLink to="/my">My</NavLink>
         <NavLink to="/counters">Counters</NavLink>
+        <NavLink to="/users">Users</NavLink>
       </nav>
       <Space size="middle">
         <Button
@@ -25,7 +26,7 @@ const Header = () => {
           icon={theme === "light" ? <MoonOutlined /> : <SunOutlined />}
         ></Button>
         <Auth />
-     </Space>
+      </Space>
     </header>
   );
 };
